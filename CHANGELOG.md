@@ -1,6 +1,140 @@
 # ChangeLog
 
-# [0.10.12] - 2024-02-22
+## [2024-03-06]
+
+New format! Going to try out reporting changes per package.
+
+### `llama-index-cli` [0.1.8]
+
+- Update mappings for `upgrade` command (#11699)
+
+### `llama-index-core` [0.10.17]
+
+- add `relative_score` and `dist_based_score` to `QueryFusionRetriever` (#11667)
+- check for `none` in async agent queue (#11669)
+- allow refine template for `BaseSQLTableQueryEngine` (#11378)
+- update mappings for llama-packs (#11699)
+- fixed index error for extracting rel texts in KG index (#11695)
+- return proper response types from synthesizer when no nodes (#11701)
+- Inherit metadata to summaries in DocumentSummaryIndex (#11671)
+- Inherit callback manager in sql query engines (#11662)
+- Fixed bug with agent streaming not being written to chat history (#11675)
+- Fixed a small bug with `none` deltas when streaming a function call with an agent (#11713)
+
+### `llama-index-multi-modal-llms-anthropic` [0.1.2]
+
+- Added support for new multi-modal models `haiku` and `sonnet` (#11656)
+
+### `llama-index-packs-finchat` [0.1.0]
+
+- Added a new llama-pack for hierarchical agents + finance chat (#11387)
+
+### `llama-index-readers-file` [0.1.8]
+
+- Added support for checking if NLTK files are already downloaded (#11676)
+
+### `llama-index-readers-json` [0.1.4]
+
+- Use the metadata passed in when creating documents (#11626)
+
+### `llama-index-vector-stores-astra-db` [0.1.4]
+
+- Update wording in warning message (#11702)
+
+### `llama-index-vector-stores-opensearch` [0.1.7]
+
+- Avoid calling `nest_asyncio.apply()` in code to avoid confusing errors for users (#11707)
+
+### `llama-index-vector-stores-qdrant` [0.1.4]
+
+- Catch RPC errors (#11657)
+
+## [0.10.16] - 2024-03-05
+
+### New Features
+
+- Anthropic support for new models (#11623, #11612)
+- Easier creation of chat prompts (#11583)
+- Added a raptor retriever llama-pack (#11527)
+- Improve batch cohere embeddings through bedrock (#11572)
+- Added support for vertex AI embeddings (#11561)
+
+### Bug Fixes / Nits
+
+- Ensure order in async embeddings generation (#11562)
+- Fixed empty metadata for csv reader (#11563)
+- Serializable fix for composable retrievers (#11617)
+- Fixed milvus metadata filter support (#11566)
+- FIxed pydantic import in clickhouse vector store (#11631)
+- Fixed system prompts for gemini/vertext-gemini (#11511)
+
+## [0.10.15] - 2024-03-01
+
+### New Features
+
+- Added FeishuWikiReader (#11491)
+- Added videodb retriever integration (#11463)
+- Added async to opensearch vector store (#11513)
+- New LangFuse one-click callback handler (#11324)
+
+### Bug Fixes / Nits
+
+- Fixed deadlock issue with async chat streaming (#11548)
+- Improved hidden file check in SimpleDirectoryReader (#11496)
+- Fixed null values in document metadata when using SimpleDirectoryReader (#11501)
+- Fix for sqlite utils in jsonalyze query engine (#11519)
+- Added base url and timeout to ollama multimodal LLM (#11526)
+- Updated duplicate handling in query fusion retriever (#11542)
+- Fixed bug in kg indexx struct updating (#11475)
+
+## [0.10.14] - 2024-02-28
+
+### New Features
+
+- Released llama-index-networks (#11413)
+- Jina reranker (#11291)
+- Added DuckDuckGo agent search tool (#11386)
+- helper functions for chatml (#10272)
+- added brave search tool for agents (#11468)
+- Added Friendli LLM integration (#11384)
+- metadata only queries for chromadb (#11328)
+
+### Bug Fixes / Nits
+
+- Fixed inheriting llm callback in synthesizers (#11404)
+- Catch delete error in milvus (#11315)
+- Fixed pinecone kwargs issue (#11422)
+- Supabase metadata filtering fix (#11428)
+- api base fix in gemini embeddings (#11393)
+- fix elasticsearch vector store await (#11438)
+- vllm server cuda fix (#11442)
+- fix for passing LLM to context chat engine (#11444)
+- set input types for cohere embeddings (#11288)
+- default value for azure ad token (#10377)
+- added back prompt mixin for react agent (#10610)
+- fixed system roles for gemini (#11481)
+- fixed mean agg pooling returning numpy float values (#11458)
+- improved json path parsing for JSONQueryEngine (#9097)
+
+## [0.10.13] - 2024-02-26
+
+### New Features
+
+- Added a llama-pack for KodaRetriever, for on-the-fly alpha tuning (#11311)
+- Added support for `mistral-large` (#11398)
+- Last token pooling mode for huggingface embeddings models like SFR-Embedding-Mistral (#11373)
+- Added fsspec support to SimpleDirectoryReader (#11303)
+
+### Bug Fixes / Nits
+
+- Fixed an issue with context window + prompt helper (#11379)
+- Moved OpenSearch vector store to BasePydanticVectorStore (#11400)
+- Fixed function calling in fireworks LLM (#11363)
+- Made cohere embedding types more automatic (#11288)
+- Improve function calling in react agent (#11280)
+- Fixed MockLLM imports (#11376)
+
+## [0.10.12] - 2024-02-22
 
 ### New Features
 
